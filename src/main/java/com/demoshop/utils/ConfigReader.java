@@ -8,7 +8,7 @@ public class ConfigReader {
 	
 	static {
 		try {
-	InputStream Is=ConfigReader.class.getClassLoader().getResourceAsStream("cofig.properties");
+	InputStream Is=ConfigReader.class.getClassLoader().getResourceAsStream("config.properties");
 	
 	if(Is==null) {
 		throw new RuntimeException("configproperties file not found in the locaation");	
