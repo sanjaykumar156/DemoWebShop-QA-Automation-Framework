@@ -1,0 +1,17 @@
+# Execution output
+/test-output/
+/screenshots/
+/logs/
+*.log
+*.html
+
+# Exclude test cases in develop
+/src/test/java/**
+
+# IDE
+/.idea/
+/.vscode/
+*.iml
+
+# OS
+.DS_Store
