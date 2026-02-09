@@ -14,8 +14,8 @@ public class LoginTest extends BaseTest{
 	
 	@Test(groups= {"smoke"})
 	public void verifyLoginWithValidCredentials() {
-		String email=ConfigReader.getproperty("email");
-		String password=ConfigReader.getproperty("password");
+		String email=ConfigReader.getProperty("email");
+		String password=ConfigReader.getProperty("password");
 		LoginPage loginPage= new LoginPage();
 		HomePage homePage= new HomePage();
 		loginPage.login(email, password);

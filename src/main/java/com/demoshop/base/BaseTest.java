@@ -18,10 +18,10 @@ public class BaseTest {
 	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	@BeforeMethod
 	public void browserSetup() throws MalformedURLException {
-		String browser=ConfigReader.getproperty("browser");
-		String url=ConfigReader.getproperty("url");
-		String remoteurl=ConfigReader.getproperty("gridUrl");
-		String execution=ConfigReader.getproperty("execution");
+		String browser=ConfigReader.getProperty("browser");
+		String url=ConfigReader.getProperty("url");
+		String remoteurl=ConfigReader.getProperty("gridUrl");
+		String execution=ConfigReader.getProperty("execution");
 		
 		ChromeOptions coptions=new ChromeOptions();
 		coptions.addArguments("--headless=new");
