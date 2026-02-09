@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite">
 	<listeners>
-		<listener class-name="listeners.TestListeners" />
+		<listener class-name="com.demoshop.listeners.TestListeners" />
 	</listeners>
 	<test name="SmokeTest">
 		<classes>
-			<class name="com.demoshop.smoke.SmokeTest" />
+			<class name="com.demoshop.smoke.LoginTest" />
 		</classes>
 	</test> 
 </suite>
