@@ -1,9 +1,11 @@
 # Execution output
+/target/
 /test-output/
 /screenshots/
 /logs/
 *.log
 *.html
+
 
 # Exclude test cases in develop
 /src/test/java/**
