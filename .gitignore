@@ -6,10 +6,6 @@
 *.log
 *.html
 
-
-# Exclude test cases in develop
-/src/test/java/**
-
 # IDE
 /.idea/
 /.vscode/
