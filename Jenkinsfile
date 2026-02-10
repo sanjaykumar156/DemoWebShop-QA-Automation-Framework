@@ -26,23 +26,38 @@ pipeline {
             }
         }
 
-        stage('Publish Extent Reports') {
-            steps {
+      stage('Publish Extent Reports') {
+    steps {
+        script {
+            def reportFile = sh(
+                script: "ls -t test-output/ExtentReport_*.html 2>/dev/null | head -n 1",
+                returnStdout: true
+            ).trim()
+
+            if (reportFile) {
                 publishHTML(target: [
-                    reportDir: 'Test-Reports',
-                    reportFiles: 'ExtentReport.html',
-                    reportName: 'Extent HTML Report',
-                    keepAll: true
+                    allowMissing: true,
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    reportDir: 'test-output',
+                    reportFiles: reportFile.replace('test-output/', ''),
+                    reportName: 'Latest Extent HTML Report'
                 ])
+                echo "✅ Published Extent Report: ${reportFile}"
+            } else {
+                echo "⚠️ No Extent report found to publish"
             }
         }
     }
+}
 
-    post {
-        always {
-            archiveArtifacts artifacts: 'Test-Reports/ExtentReport.html', fingerprint: true
-            junit 'target/surefire-reports/*.xml'
-        }
+    }
+
+   post {
+    always {
+        archiveArtifacts artifacts: 'test-output/**', allowEmptyArchive: true
+        junit '**/surefire-reports/*.xml'
+    }
 
         success {
             emailext(
