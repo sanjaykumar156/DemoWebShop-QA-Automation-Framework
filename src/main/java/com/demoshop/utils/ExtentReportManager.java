@@ -18,6 +18,7 @@ public class ExtentReportManager {
 			String reportPath=System.getProperty("user.dir")+ "/test-output/ExtentReport_" + timeStamp + ".html";
 			
 			ExtentSparkReporter sparkreporter= new ExtentSparkReporter(reportPath);
+			sparkreporter.config().setOfflineMode(true);
 			sparkreporter.config().setTheme(Theme.STANDARD);
 			sparkreporter.config().setDocumentTitle("DemoWebShop Automation Report");
 			sparkreporter.config().setReportName("Functional Test Execution");
