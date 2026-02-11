@@ -10,9 +10,12 @@ public class HomePage extends BasePage{
 		super(BaseTest.getDriver());
 	}
 	private By txtvalidation=By.xpath("//div[@class='header-links']/ul/li[1]");
-	
+	private By regtxtvalidate=By.xpath("//div[@class='result']");
 	
 	public boolean IsUserLoggein() {
 		return isDisplayed(txtvalidation);
+	}
+	public boolean IsUserRegistered() {
+		return isDisplayed(regtxtvalidate);
 	}
 }
