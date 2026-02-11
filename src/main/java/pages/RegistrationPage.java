@@ -20,6 +20,7 @@ public class RegistrationPage extends BasePage{
 	private By txtpassword=By.id("Password");
 	private By txtcnrmpassword=By.id("ConfirmPassword");
 	private By btnsubmit=By.id("register-button");
+	private By txtvalidation=By.xpath("//div[@class='validation-summary-errors']");
 	
 	
 	public void Registration(String fname,String lname,String email,
@@ -34,6 +35,10 @@ public class RegistrationPage extends BasePage{
 		sendkeys(txtpassword,password);
 		sendkeys(txtcnrmpassword, cnfpassword);
 		click(btnsubmit);
+	}
+	public String validateErrorMessage() {
+		
+		return gettext(txtvalidation);
 	}
 	
 	
