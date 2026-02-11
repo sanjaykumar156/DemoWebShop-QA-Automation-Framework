@@ -24,7 +24,7 @@ public class BaseTest {
 		String execution=ConfigReader.getProperty("execution");
 		
 		ChromeOptions coptions=new ChromeOptions();
-		coptions.addArguments("--headless=new");
+		//coptions.addArguments("--headless=new");
 		coptions.addArguments("--disable-notifications");
 		
 		EdgeOptions eoptions=new EdgeOptions();

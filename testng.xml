@@ -5,7 +5,7 @@
 	</listeners>
 	<test name="SmokeTest">
 		<classes>
-			<class name="com.demoshop.smoke.LoginTest" />
+			<class name="com.demoshop.smoke.RegistrationTest" />
 		</classes>
 	</test> 
 </suite>

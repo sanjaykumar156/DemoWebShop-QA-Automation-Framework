@@ -6,6 +6,16 @@
 *.log
 *.html
 
+# Compiled files
+bin/
+target/
+*.class
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
 # IDE
 /.idea/
 /.vscode/
