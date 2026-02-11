@@ -8,6 +8,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.demoshop.utils.ExtentReportManager;
+import com.demoshop.utils.ScreenshotUtil;
 
 public class TestListeners implements ITestListener {
 
@@ -28,6 +29,11 @@ public class TestListeners implements ITestListener {
 	@Override
     public void onTestFailure(ITestResult result) {
         extentTest.get().log(Status.FAIL, result.getThrowable());
+        
+        String screenshotPath=ScreenshotUtil.captureScreenshot(result.getMethod().getMethodName());
+        if(screenshotPath!=null) {
+        	extentTest.get().addScreenCaptureFromPath(screenshotPath);
+        }
 	}
 	@Override
     public void onTestSkipped(ITestResult result) {
