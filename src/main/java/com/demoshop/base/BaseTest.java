@@ -14,6 +14,8 @@ import org.testng.annotations.BeforeMethod;
 
 import com.demoshop.utils.ConfigReader;
 
+import pages.LoginPage;
+
 public class BaseTest {
 	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	@BeforeMethod
@@ -81,6 +83,14 @@ public class BaseTest {
 			driver.remove();
 		}
 		
+	}
+	protected void loginToApplication() {
+	    LoginPage loginPage = new LoginPage();
+	    
+	    loginPage.login(
+	        ConfigReader.getProperty("email"),
+	        ConfigReader.getProperty("password")
+	    );
 	}
 	
 

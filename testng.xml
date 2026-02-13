@@ -5,7 +5,7 @@
 	</listeners>
 	<test name="SmokeTest">
 		<classes>
-			<class name="com.demoshop.sanity.RegistrationDuplicateEmailTest" />
+			<class name="com.demoshop.regression.AddProducttoCart" />
 		</classes>
 	</test> 
 </suite>
