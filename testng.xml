@@ -5,7 +5,7 @@
 	</listeners>
 	<test name="SmokeTest">
 		<classes>
-			<class name="com.demoshop.regression.AddProducttoCart" />
+			<class name="com.demoshop.regression.TC_CART_002_UpadteQuantity" />
 		</classes>
 	</test> 
 </suite>
