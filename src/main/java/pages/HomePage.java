@@ -17,7 +17,7 @@ public class HomePage extends BasePage{
 	private By txtproduct= By.xpath("//a[text()='Simple Computer']");
 	private By btnaddtocart= By.xpath("//a[text()='Simple Computer']/ancestor::div[@class='details']//input");
 	private By txtactualprice= By.xpath("//a[text()='Simple Computer']/ancestor::div[@class='details']//span");
-	
+	private By btnshoppingcart= By.xpath("//span[normalize-space()='Shopping cart']");
 	
 	
 	public boolean IsUserLoggein() {
@@ -32,7 +32,7 @@ public class HomePage extends BasePage{
 		click(btndesktops);	
 	}
 	public String gethomePageProductName() {
-		PresenceOfElement(txtproduct);
+		elementToBeClickable(txtproduct);
 		return getText(txtproduct);
 	}
 	public String gethomePageProductPrice() {
@@ -40,5 +40,8 @@ public class HomePage extends BasePage{
 	}
 	public void buttonCart() {
 		click(btnaddtocart);
+	}
+	public void buttonShoppincart() {
+		click(btnshoppingcart);
 	}
 }

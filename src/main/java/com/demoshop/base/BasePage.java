@@ -38,6 +38,13 @@ public class BasePage {
 			throw new RuntimeException("Failed to get text from element: " + locator, e);
 		}
 	}
+	public String getAttributeValue(By locator, String attributeName) {
+		try {
+		return driver.findElement(locator).getAttribute(attributeName);
+		}catch(Exception e) {
+			throw new RuntimeException("Failed to get Attributevalue from element: " + locator, e);
+		}
+	}
 	public boolean isDisplayed(By locator) {
 		try {
 		return driver.findElement(locator).isDisplayed();
@@ -65,9 +72,11 @@ public class BasePage {
 	public void elementToBeClickable(By locator) {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
+	
 	public void PresenceOfElement(By locator) {
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
+
 	public void mouseActions(By locator, String actionType) {
 	WebElement acc=driver.findElement(locator);
 	switch(actionType.toLowerCase()) {
@@ -187,6 +196,13 @@ public class BasePage {
 	public String pageTitle() {
 		return driver.getTitle();
 	}
+	public void pressEnterKey() {
+        action.sendKeys(Keys.ENTER).perform();
+    }
+
+    public void pressShiftKey() {
+        action.keyDown(Keys.SHIFT).keyUp(Keys.SHIFT).perform();
+    }
 
 
 

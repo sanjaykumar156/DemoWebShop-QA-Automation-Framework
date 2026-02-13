@@ -19,14 +19,15 @@ public class ProductPage extends BasePage{
 	private By txtsuccess= By.xpath("//p[text()='The product has been added to your ']");
 	private By btnshoppingcart= By.xpath("//span[normalize-space()='Shopping cart']");
 	private By txtverifycartproduct= By.xpath("//div[@class='mini-shopping-cart']//div[@class='name']//a[text()='Simple Computer']");
-	
+	private By txtquantity=By.xpath("//div[@class='add-to-cart-panel']//input[@class='qty-input valid']");
 	
 	public String getProductNameFromProductPage() {
 		PresenceOfElement(txtproductname);
 		 return getText(txtproductname);
 	}
 	public boolean productInStock() {
-		 return isDisplayed(txtinstock);
+		  PresenceOfElement(txtinstock);   
+		  return isDisplayed(txtinstock);
 	}
 	public void selectProcessor() {
 		 click(btnprocessor);
@@ -44,4 +45,7 @@ public class ProductPage extends BasePage{
 	    mouseActions(btnshoppingcart, "hover");
 	    return getText(txtverifycartproduct);
 	} 
+	public void addProductQuantity() {
+		getText(txtquantity);
+	}
 }
