@@ -82,16 +82,10 @@ public class BaseTest {
 			driver.get().quit();
 			driver.remove();
 		}
-		
-	}
-	protected void loginToApplication() {
-	    LoginPage loginPage = new LoginPage();
-	    
-	    loginPage.login(
-	        ConfigReader.getProperty("email"),
-	        ConfigReader.getProperty("password")
-	    );
+	
+}
+	
 	}
 	
 
-}
+
