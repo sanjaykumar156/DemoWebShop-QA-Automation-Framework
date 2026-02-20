@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite">
-	<listeners>
-		<listener class-name="com.demoshop.listeners.TestListeners" />
-	</listeners>
 	<test name="SmokeTest">
 		<classes>
+<<<<<<< Updated upstream
 			<class name="com.demoshop.sanity.RegistrationDuplicateEmailTest" />
+=======
+			<class name="com.demoshop.regression.TC_PlaceOrder_001PlaceOderWithValidCredentials" />
+>>>>>>> Stashed changes
 		</classes>
 	</test> 
 </suite>

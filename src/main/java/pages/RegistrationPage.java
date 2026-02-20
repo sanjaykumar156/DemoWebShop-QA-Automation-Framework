@@ -38,7 +38,7 @@ public class RegistrationPage extends BasePage{
 	}
 	public String validateErrorMessage() {
 		
-		return gettext(txtvalidation);
+		return getText(txtvalidation);
 	}
 	
 	

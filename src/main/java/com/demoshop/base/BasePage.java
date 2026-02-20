@@ -31,7 +31,7 @@ public class BasePage {
 	public void clear(By locator) {
 		driver.findElement(locator).clear();
 	}
-	public String gettext(By locator) {
+	public String getText(By locator) {
 		try {
 		return driver.findElement(locator).getText();
 		}catch(Exception e) {

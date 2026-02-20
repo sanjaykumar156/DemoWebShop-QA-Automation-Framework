@@ -17,7 +17,7 @@ public class RegistrationTest extends BaseTest{
 		
 		String firstName=ConfigReader.getProperty("fname");
 		String lastName=ConfigReader.getProperty("lname");
-		String email=ConfigReader.getProperty("remail");
+		String email = "user" + System.currentTimeMillis() + "@testmail.com";
 		String password=ConfigReader.getProperty("rpassword");
 		String cnrfPassword=ConfigReader.getProperty("crpassword");
 		

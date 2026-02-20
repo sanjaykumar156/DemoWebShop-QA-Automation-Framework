@@ -6,11 +6,10 @@ import org.openqa.selenium.WebDriver;
 import com.demoshop.base.BasePage;
 import com.demoshop.base.BaseTest;
 
-public class ShoppingCartPage extends BasePage {
 
+public class ShoppingCartPage extends BasePage {
 	public ShoppingCartPage() {
 		super(BaseTest.getDriver());
-		
 	}
 	private By txtquantity=By.xpath("//input[@class='qty-input']");
 	private By txtquantitycheck=By.xpath("//input[@class='qty-input']");
@@ -20,7 +19,6 @@ public class ShoppingCartPage extends BasePage {
 	private By btnupdatecart= By.xpath("//input[@name='updatecart']");
 	private By txtverifydelete=By.cssSelector(".order-summary-content");
 	private By btncountrydropdown=By.cssSelector(".country-input");
-	private By btnstatedropdown=By.cssSelector("state-input");
 	private By txtPostalcode= By.id("ZipPostalCode");
 	private By btntermsandcondition= By.xpath("//input[@id='termsofservice']");
 	private By btncheckout=By.xpath("//button[@id='checkout']");
@@ -30,25 +28,21 @@ public class ShoppingCartPage extends BasePage {
 	public int validatePrice() {
 		return(int) Double.parseDouble(getText(txtpricecheck));
 	}
+	public int validateProductQuantity() {
+		return(int) Double.parseDouble(getText(txtquantitycheck));
+	}
 	public int productUnitPrice() {
 		return(int) Double.parseDouble(getText(txtunitpeice));
 	}
 	public void addProductQuantity(String quantity) {
 		clear(txtquantity);
 		sendkeys(txtquantity,quantity);
-		pressEnterKey();
-	}
-	public int validateProductQuantity() {
-		String value= getAttributeValue(txtquantitycheck,"value");
-		return Integer.parseInt(value.trim());
 	}
 	public void removeProductFromCart() {
 		click(btnradio);
 		click(btnupdatecart);
-	}
-	public boolean isCartEmptyMessageDisplayed() {
-		return isDisplayed(txtverifydelete);
-	}
+}
+
 	public int getCalculatedTotalPrice() {
 		int productQuantity= validateProductQuantity();
 		int unitPrice= productUnitPrice();
@@ -63,7 +57,9 @@ public class ShoppingCartPage extends BasePage {
 		click(btntermsandcondition);
 		click(btncheckout);
 	}
-	
+	public boolean isCartEmptyMessageDisplayed() {
+		return isDisplayed(txtverifydelete);
+	}
 	
 
 }
