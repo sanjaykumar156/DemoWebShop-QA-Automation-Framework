@@ -15,13 +15,14 @@ import pages.ProductPage;
 public class TC_CART_001_AddProductToCart extends BaseTest{
 	private static final Logger log=LoggerManager.getLogger(TC_CART_001_AddProductToCart.class);
 	LoginFlow loginWithValidCredentials;
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void productSetup() {
 		loginWithValidCredentials=new LoginFlow();
+		loginWithValidCredentials.loginWithValidCredentials();
     }
 	
 	@Test(groups={"regression"})
-	public void addProductToCart() {
+	public void verifyUserCanAddProductToCartSuccessfully() {
 		HomePage homepage= new HomePage();
 		ProductPage product=new ProductPage();
 		log.info("Test started: Product is add to cart");

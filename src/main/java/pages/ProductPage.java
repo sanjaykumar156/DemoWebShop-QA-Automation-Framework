@@ -18,7 +18,8 @@ public class ProductPage extends BasePage{
 	private By txtverifyprice=By.xpath("//span[@class='price-value-75']");
 	private By txtsuccess= By.xpath("//p[text()='The product has been added to your ']");
 	private By btnshoppingcart= By.xpath("//span[normalize-space()='Shopping cart']");
-	private By txtverifycartproduct= By.xpath("//div[@class='mini-shopping-cart']//div[@class='name']//a[text()='Simple Computer']");
+	String productName = "Simple Computer";
+	private By txtverifycartproduct= By.xpath("//div[@class='mini-shopping-cart']//div[@class='name']//a[text()='" + productName + "']");
 	
 	
 	public String getProductNameFromProductPage() {
@@ -45,5 +46,6 @@ public class ProductPage extends BasePage{
 	    mouseActions(btnshoppingcart, "hover");
 	    return getText(txtverifycartproduct);
 	} 
+	
 	
 }
