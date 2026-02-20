@@ -14,6 +14,8 @@ import org.testng.annotations.BeforeMethod;
 
 import com.demoshop.utils.ConfigReader;
 
+import pages.LoginPage;
+
 public class BaseTest {
 	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	@BeforeMethod
@@ -80,8 +82,10 @@ public class BaseTest {
 			driver.get().quit();
 			driver.remove();
 		}
-		
+	
+}
+	
 	}
 	
 
-}
+
