@@ -78,9 +78,6 @@ private static final Logger log= LoggerManager.getLogger(TC_PlaceOrder_001PlaceO
 		log.info("Expiry month selected");
 		log.info("CVV entered");
 		
-//		log.info("Verifying account holder email");
-//		Assert.assertEquals(checkout.verifybillingemail(),checkout.accountHolderemail());
-//		log.info("Billing email verified successfully");
 		
 		log.info("Verifying payment method");
 		Assert.assertTrue(checkout.verifyPaymentmethod());
